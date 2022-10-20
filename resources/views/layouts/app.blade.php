@@ -17,11 +17,13 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @livewireStyles()
 </head>
 <body>
         <div class="container p-3">
             {{$slot}}
         </div>
+    @livewireScripts()
     @yield('js')
 </body>
 </html>

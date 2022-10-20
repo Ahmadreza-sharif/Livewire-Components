@@ -17,17 +17,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (App\Models\Product::all() as $product)
+                        @livewire('cart.cart')
+                        @livewire('cart.favorite')
+                        @forelse($products as $product)
                             <tr>
-                                <th scope="row">{{$product->id}}</th>
-                                <td>{{$product->name}}</td>
-                                <td>${{$product->price}}</td>
+                                <th scope="row">{{ $product->id }}</th>
+                                <td>{{ $product->name }}</td>
+                                <td>${{ $product->price }}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary">Add to Cart</button>
-                                    <button class="btn btn-sm btn-danger">Delete of Cart</button>
+                                    @if (!\App\Models\cart::where('product_id', $product->id)->first())
+                                        <button wire:click.prevent="addToCart({{ $product->id }})"
+                                            class="btn btn-sm btn-primary">Add to Cart</button>
+                                    @else
+                                        <button wire:click.prevent="removeOfCart({{ $product->id }})"
+                                            class="btn btn-sm btn-danger">Delete of Cart</button>
+                                    @endif
+                                </td>
+                                <td>
+
+                                    @if (!\App\Models\favorite::where('product_id', $product->id)->first())
+                                        <i wire:click.prevent="addFavorite({{$product->id}})" class="fa-solid fa-heart"></i>
+                                    @else
+                                        <i wire:click.prevent="removeFavorite({{$product->id}})" style="color: red;" class="fa-solid fa-heart"></i>
+                                    @endif
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <h3>Not Found.</h3>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
