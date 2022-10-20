@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Livewire\Cart\Cart;
+use App\Http\Livewire\Cart\Product;
+use App\Http\Livewire\Componentlist;
 use Illuminate\Support\Facades\Route;
+use Termwind\Components\Li;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', Componentlist::class);
+Route::get('/cart', Product::class)->name('cart');
