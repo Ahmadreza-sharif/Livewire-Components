@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\city;
+use App\Models\country;
 use App\Models\product;
 use Illuminate\Database\Seeder;
 
@@ -23,5 +25,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         product::factory(20)->create();
+        country::factory(2)->create();
+        city::factory(4)->create();
     }
 }
