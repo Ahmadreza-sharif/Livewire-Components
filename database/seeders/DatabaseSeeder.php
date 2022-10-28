@@ -6,6 +6,8 @@ namespace Database\Seeders;
 
 use App\Models\city;
 use App\Models\country;
+use App\Models\post;
+use App\Models\post_comment;
 use App\Models\product;
 use Illuminate\Database\Seeder;
 
@@ -27,5 +29,6 @@ class DatabaseSeeder extends Seeder
         product::factory(20)->create();
         country::factory(2)->create();
         city::factory(4)->create();
+        post::factory(4)->create();
     }
 }

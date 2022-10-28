@@ -11,6 +11,9 @@
                 <div class="row">
                     <a href="{{route('multistep')}}">Multi step form</a>
                 </div>
+                <div class="row">
+                    <a href="{{route('comment')}}">Comments </a>
+                </div>
             </div>
         </div>
     </div>

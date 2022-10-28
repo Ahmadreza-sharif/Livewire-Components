@@ -3,6 +3,7 @@
 use Termwind\Components\Li;
 use App\Http\Livewire\Cart\Cart;
 use App\Http\Livewire\Cart\Product;
+use App\Http\Livewire\Comment\Comments;
 use App\Http\Livewire\Componentlist;
 use App\Http\Livewire\MultipleStepForm\MultipleStepForm;
 use Illuminate\Support\Facades\Auth;
@@ -23,3 +24,4 @@ Auth::routes();
 Route::get('/', Componentlist::class);
 Route::get('/cart', Product::class)->name('cart');
 Route::get('/multistep', MultipleStepForm::class)->name('multistep');
+Route::get('/comments', Comments::class)->name('comment');
