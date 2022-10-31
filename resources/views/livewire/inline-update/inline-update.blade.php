@@ -1,4 +1,4 @@
-<div>
+<div x-data="{}">
     @section('header', 'Inline update')
     <div class="d-flex align-items-center justify-content-center">
         <div class="card col-8">
@@ -64,4 +64,7 @@
             </div>
         </div>
     </div>
+    @section('js')
+        <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+    @endsection
 </div>

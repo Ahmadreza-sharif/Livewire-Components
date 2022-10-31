@@ -35,7 +35,7 @@ class InlineUpdate extends Component
         $this->validate();
         $product = $this->products[$productIndex] ?? null;
         if (! is_null($product)) {
-            optional(product::find($product['id']))->update();
+            optional(product::find($product['id']))->update($product);
         }
         $this->editedProductIndex = null;
         $this->editedProductField = null;
