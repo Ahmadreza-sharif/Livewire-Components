@@ -22,8 +22,8 @@ class Comments extends Component
         post_comment::create([
             'comment_text' => $this->comment_text,
             'post_id' => $this->post_id,
-            'user_id' => Auth::id(),
-            'replied_to' => $this->replid_to
+            'user_id' => 1,
+            'parent_id' => $this->replid_to
         ]);
         $this->reset();
     }
@@ -32,6 +32,7 @@ class Comments extends Component
     {
         $this->replid_to = $id;
     }
+    
     public function render()
     {
         $comments = post_comment::whereNull('parent_id')->with('replies')->latest()->get();

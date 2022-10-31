@@ -25,9 +25,16 @@
                         @forelse ($comments as $comment)
                             <div class="border-top pt-3 pb-3">
                                 <h5>User 1</h5>
-                                <p>{{$comment->comment_text}}</p>
-                                <a class="btn btn-primary btn-sm" wire:click='reply({{$comment->id}})'>Replie to this Comment</a>
+                                <p>{{ $comment->comment_text }}</p>
+                                <a class="btn btn-primary btn-sm" wire:click='reply({{ $comment->id }})'>Replie to this
+                                    Comment</a>
                             </div>
+                            @foreach ($comment->replies as $comment)
+                                <div class="border-top pt-3 pb-3 ms-3">
+                                    <h5>User 1</h5>
+                                    <p>{{ $comment->comment_text }}</p>
+                                </div>
+                            @endforeach
                         @empty
                         @endforelse
                     </div>
