@@ -24,10 +24,13 @@
                                         @if ($editedProductIndex === $index || $editedProductField === $index . 'name')
                                             <div class="col-10">
                                                 <input class="form-control form-control-sm" type="text"
-                                                    name="" id="">
+                                                    @click.away="$wire.editedProductField === '{{ $index }}.name' ? $wire.saveProduct({{ $index }}) : null"
+                                                    wire:model.defer="products.{{ $index }}.name">
                                             </div>
                                         @else
-                                            {{ $product['name'] }}
+                                            <div wire:click="editedProductField({{ $index }},'name')">
+                                                {{ $product['name'] }}
+                                            </div>
                                         @endif
 
                                     </td>
@@ -35,18 +38,22 @@
                                         @if ($editedProductIndex === $index || $editedProductField === $index . 'name')
                                             <div class="col-10">
                                                 <input class="form-control form-control-sm" type="text"
-                                                    name="" id="">
+                                                    @click.away="$wire.editedProductField === '{{ $index }}.price' ? $wire.saveProduct({{ $index }}) : null"
+                                                    wire:model.defer="products.{{ $index }}.price">
                                             </div>
                                         @else
-                                            ${{ $product['price'] }}
+                                            <div wire:click="editedProductField({{ $index }},'price')">
+                                                ${{ $product['price'] }}
+                                            </div>
                                         @endif
 
                                     </td>
                                     <td>
-                                        @if ($editedProductIndex === $index || (isset($editedProductField)) && (int)(explode('.', $editedProductField)) ===  $index)
-                                        <button class="btn btn-sm btn-success">Save</button>
+                                        @if ($editedProductIndex === $index ||
+                                            (isset($editedProductField) && (int) explode('.', $editedProductField) === $index))
+                                            <button wire:click.prevent='saveProduct({{ $index }})' class="btn btn-sm btn-success">Save</button>
                                         @else
-                                        <button class="btn btn-sm btn-primary">Update</button>
+                                            <button wire:click.prevent='updateProduct({{ $index }})' class="btn btn-sm btn-primary">Update</button>
                                         @endif
                                     </td>
                                 </tr>
