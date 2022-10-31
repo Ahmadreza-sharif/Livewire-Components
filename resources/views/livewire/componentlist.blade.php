@@ -14,6 +14,9 @@
                 <div class="row">
                     <a href="{{route('comment')}}">Comments </a>
                 </div>
+                <div class="row">
+                    <a href="{{route('inlineupdate')}}">Inline Update </a>
+                </div>
             </div>
         </div>
     </div>
