@@ -7,6 +7,7 @@ use App\Http\Livewire\Comment\Comments;
 use App\Http\Livewire\Componentlist;
 use App\Http\Livewire\InlineUpdate\InlineUpdate;
 use App\Http\Livewire\MultipleStepForm\MultipleStepForm;
+use App\Http\Livewire\Quiz\Quiz;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get('/cart', Product::class)->name('cart');
 Route::get('/multistep', MultipleStepForm::class)->name('multistep');
 Route::get('/comments', Comments::class)->name('comment');
 Route::get('/inlineupdate', InlineUpdate::class)->name('inlineupdate');
+Route::get('/quiz', Quiz::class)->name('quiz'); 

@@ -33,5 +33,5 @@ npm run dev
 ![](readme2.png)
 
 # Developers
-<a href="https://github.com/arxia-dev" target="_blank">Arxia</a>
+<a href="https://github.com/arxia-dev" target="_blank">Arxia :)</a>
 
