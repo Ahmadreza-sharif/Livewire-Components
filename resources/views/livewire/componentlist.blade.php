@@ -17,6 +17,9 @@
                 <div class="row">
                     <a href="{{route('inlineupdate')}}">Inline Update </a>
                 </div>
+                <div class="row">
+                    <p>Completing ...</p>
+                </div>
             </div>
         </div>
     </div>
