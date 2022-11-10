@@ -18,7 +18,7 @@
                     <a href="{{route('inlineupdate')}}">Inline Update </a>
                 </div>
                 <div class="row">
-                    <a href="{{route('quiz')}}">Quiz </a>
+                    <a href="{{route('quiz')}}">Simple Quiz</a>
                 </div>
                 <div class="row">
                     <p>Completing ...</p>
