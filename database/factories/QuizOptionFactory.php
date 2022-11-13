@@ -17,7 +17,7 @@ class QuizOptionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
         ];
     }
 }

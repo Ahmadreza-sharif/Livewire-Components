@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('country_id');
+            $table->unsignedBigInteger('country_id');
+            $table->unsignedBigInteger('state_id');
 
         });
     }

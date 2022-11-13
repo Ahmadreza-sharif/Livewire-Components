@@ -20,7 +20,8 @@ class CityFactory extends Factory
         $id = country::all()->pluck('id')->toArray();
         return [
             'name' => $this->faker->city(),
-            'country_id' => $id[array_rand($id)]
+            'country_id' => $id[array_rand($id)],
+            'state_id' => 1
         ];
     }
 }

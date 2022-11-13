@@ -2,17 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\city;
+use App\Models\vote;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class country extends Model
+class comment extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
-
-    public function states()
+    public function vote()
     {
-        return $this->hasMany(city::class);
+        return $this->hasMany(vote::class);
     }
 }
