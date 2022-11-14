@@ -16,15 +16,15 @@ class More extends Component
 
     public function mount()
     {
-        $this->loadData()
+        $this->loadData();
     }
 
     public function loadData()
     {
-        $products = city::query()->offset($this->offset)->limit($this->amount)->get();
-        $this->products = isset($products) ? $this->products->merge($products) : $products;
+        $products = product::query()->offset($this->offset)->limit($this->amount)->get();
+        $this->products = isset($this->products) ? $this->products->merge($products) : $products;
 
-        $this->products += $this->amount;
+        $this->offset += $this->amount;
 
         $this->showMore = product::count() > $this->offset;
     }
