@@ -14,6 +14,7 @@ use App\Http\Livewire\Automatic\AutoValidation;
 use App\Http\Livewire\Category\ThreeCategories;
 use App\Http\Livewire\Chart\Chart;
 use App\Http\Livewire\InlineUpdate\InlineUpdate;
+use App\Http\Livewire\MoreButton\More;
 use App\Http\Livewire\MultipleStepForm\MultipleStepForm;
 
 /*
@@ -41,3 +42,4 @@ Route::get('/simplecrud', Crud::class)->name('simplecrud');
 Route::get('/filter', Filtering::class)->name('filter');
 Route::get('/autoValidation', AutoValidation::class)->name('autoValidation');
 Route::get('/chart', Chart::class)->name('chart');
+Route::get('/more', More::class)->name('more');

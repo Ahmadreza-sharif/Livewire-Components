@@ -42,6 +42,9 @@
                     <a href="{{route('chart')}}">Charts</a>
                 </div>
                 <div class="row">
+                    <a href="{{route('more')}}">show More button</a>
+                </div>
+                <div class="row">
                     <p>Completing ...</p>
                 </div>
             </div>
